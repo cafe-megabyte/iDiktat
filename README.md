@@ -2,8 +2,6 @@
 
 A minimal iOS custom keyboard that records your voice **from inside the keyboard**, so you can dictate into any app without bouncing to the keyboard's containing app and back.
 
-![The demo keyboard recording inside the host app, then stopped](docs/simulator.png)
-
 ## The problem
 
 Most third-party dictation keyboards on iOS do an awkward dance:
