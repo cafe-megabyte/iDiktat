@@ -95,11 +95,6 @@ The `AudioContext` is only created when capture starts, because creating one can
 - **Usage descriptions in both `Info.plist`s:** `NSMicrophoneUsageDescription` and `NSSpeechRecognitionUsageDescription`.
 - Public APIs only: no private frameworks or selectors.
 
-## Status
-
-- **iPhone:** works end to end ([video](https://x.com/stephancill/status/2123484921448550893)). In the X app, the keyboard records in place and Apple Speech's partial results stream into the post composer as you talk.
-- **Simulator (iOS 27):** recording inside the keyboard works, but Apple Speech fails to initialise on the simulator in both the keyboard and the app (`Failed to initialize recognizer`). The keyboard keeps recording when Speech fails, and the status line shows seconds captured and the input level, so the audio path can still be checked.
-
 Prior art: Raycast's iOS keyboard uses the same WebKit capture approach for its in-keyboard dictation.
 
 ## Run it
