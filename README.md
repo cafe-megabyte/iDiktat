@@ -2,6 +2,8 @@
 
 A minimal iOS custom keyboard that records your voice **from inside the keyboard**, so you can dictate into any app without bouncing to the keyboard's containing app and back.
 
+**[Watch it on a real iPhone →](https://x.com/stephancill/status/2123484921448550893)** (dictating a reply in the X app, live transcription, no app switch)
+
 ## The problem
 
 Most third-party dictation keyboards on iOS do an awkward dance:
@@ -95,9 +97,8 @@ The `AudioContext` is only created when capture starts, because creating one can
 
 ## Status
 
-- **Recording** inside the keyboard works on the iOS 27 simulator: audio streams continuously while you stay in the host app. The status line above the button shows seconds captured and the input level.
-- **Apple Speech** doesn't initialise on the simulator, in either the keyboard or the app (`Failed to initialize recognizer`), so on-device transcription has to be tested on a phone. The keyboard keeps recording when Speech fails, so the audio path stays visible.
-- If Apple Speech turns out to be unavailable inside keyboard extensions on device, send the PCM to a server-side recognizer instead.
+- **iPhone:** works end to end ([video](https://x.com/stephancill/status/2123484921448550893)). In the X app, the keyboard records in place and Apple Speech's partial results stream into the post composer as you talk.
+- **Simulator (iOS 27):** recording inside the keyboard works, but Apple Speech fails to initialise on the simulator in both the keyboard and the app (`Failed to initialize recognizer`). The keyboard keeps recording when Speech fails, and the status line shows seconds captured and the input level, so the audio path can still be checked.
 
 Prior art: Raycast's iOS keyboard uses the same WebKit capture approach for its in-keyboard dictation.
 
