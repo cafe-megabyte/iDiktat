@@ -1,0 +1,11 @@
+version: 1
+product: KeyboardDictationDemo
+bundleID: net.stupidtech.keyboard-dictation-demo
+deploymentTarget: "17.0"
+infoPath: Info.plist
+entitlementsPath: App.entitlements
+deviceFamily: iphone
+extensions:
+  - product: KeyboardDictationDemoKeyboard
+    bundleID: net.stupidtech.keyboard-dictation-demo.keyboard
+    infoPath: KeyboardInfo.plist
