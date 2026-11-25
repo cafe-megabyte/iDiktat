@@ -9,7 +9,7 @@ Copyright (c) 2026 Stephan Cilliers, MIT License (see `LICENSE`).
 
 ## Speech model: Parakeet TDT 0.6B v3
 
-`Models/Parakeet/` (downloaded separately, see `Models/README.md`) contains the Core ML version of
+`Models/Parakeet.zip` (downloaded separately, see `Models/README.md`) contains the Core ML version of
 [nvidia/parakeet-tdt-0.6b-v3](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v3),
 converted by FluidInference
 ([FluidInference/parakeet-tdt-0.6b-v3-coreml](https://huggingface.co/FluidInference/parakeet-tdt-0.6b-v3-coreml)).

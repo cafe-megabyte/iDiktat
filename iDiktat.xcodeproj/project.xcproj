@@ -33,9 +33,17 @@
       "name": "Scripts",
       "children": [
         { "path": "Scripts/generate-build-number.sh" },
+        { "path": "Scripts/unpack-model.sh" },
       ],
     },
-    { "path": "Models/Parakeet", "target-membership": [ "iDiktatKeyboard/resources" ] },
+    {
+      "kind": "group",
+      "name": "Models",
+      "children": [
+        { "path": "Models/Parakeet.zip" },
+        { "path": "Models/README.md" },
+      ],
+    },
     {
       "kind": "group",
       "name": "Products",
@@ -94,6 +102,22 @@
         "compile-sources",
         "frameworks",
         "resources",
+        {
+          "kind": "script",
+          "name": "Unpack Speech Model",
+          "input-paths": [
+            "$(SRCROOT)/Models/Parakeet.zip",
+            "$(SRCROOT)/Scripts/unpack-model.sh",
+          ],
+          "output-paths": [
+            "$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/Parakeet",
+          ],
+          "shell": "/bin/sh",
+          "script": [
+            "\"$SRCROOT/Scripts/unpack-model.sh\" \"$SRCROOT/Models/Parakeet.zip\" \"$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/Parakeet\"",
+            "",
+          ],
+        },
       ],
       "build-settings": {
         "APPLICATION_EXTENSION_API_ONLY": "YES",

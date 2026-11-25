@@ -24,9 +24,9 @@ audio to Apple's servers by default; iDiktat replaces it with an on-device model
 
 You need **Xcode 27** or later, because the project uses the new `project.xcproj` format.
 
-1. **Get the speech model.** It is too large for Git (~600 MB). Download `Parakeet.zip` from the
-   [`model-v1` release](../../releases/tag/model-v1), unzip it and move the `Parakeet` folder into
-   `Models/`, so that you get `Models/Parakeet/Encoder_v2.mlmodelc` and so on. Details in
+1. **Get the speech model.** It is too large for Git (~530 MB). Download `Parakeet.zip` from the
+   [`model-v1` release](../../releases/tag/model-v1) and put it into `Models/` as it is, without
+   unzipping. The build unpacks it into the keyboard extension in Xcode's build folder. Details in
    [`Models/README.md`](Models/README.md).
 2. Open `iDiktat.xcodeproj`.
 3. Set your team: copy `Config/Signing.example.xcconfig` to `Config/Signing.xcconfig` and enter
@@ -160,8 +160,9 @@ Shared/                            used by both app and keyboard
 *.xcstrings                        String Catalogs: English texts with German translation
 Config/                            Info.plists (with build number), entitlements (App Group), xcconfigs (signing)
 Docs/                              app icon images for this README
-Models/Parakeet/                   speech model (not in Git, see Models/README.md)
+Models/Parakeet.zip                speech model (not in Git, see Models/README.md)
 Scripts/generate-build-number.sh   timestamp build number (target "Generate Build Number")
+Scripts/unpack-model.sh            unpacks the model into the keyboard (phase "Unpack Speech Model")
 ```
 
 To convert back to the old project format (e.g. for older Xcode versions):
