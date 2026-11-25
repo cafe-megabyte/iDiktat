@@ -1,6 +1,11 @@
 .DS_Store
-.build/
-.swiftpm/
-.release/
 *.ipa
-.env.local
+xcuserdata/
+DerivedData/
+
+# The speech model (~600 MB) is not in Git. Download it from the GitHub release, see README.md.
+Models/Parakeet/
+Models/*.zip
+
+# Personal signing settings (team ID), see Config/Signing.example.xcconfig.
+Config/Signing.xcconfig

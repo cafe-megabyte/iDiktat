@@ -1,0 +1,7 @@
+// Base settings for the whole project (Debug and Release).
+//
+// Your Apple Developer team ID is personal, so it is not in Git. Copy
+// Signing.example.xcconfig to Signing.xcconfig in this folder and enter your team ID there.
+// Without that file the project still opens, but Xcode asks for a team when you build for a device.
+
+#include? "Signing.xcconfig"

@@ -1,0 +1,78 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "modelFileMissing" : {
+      "comment" : "Error: a file of the speech model is missing. Argument: file name",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modelldatei fehlt: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Model file missing: %@"
+          }
+        }
+      }
+    },
+    "modelLoadFailed" : {
+      "comment" : "Status: loading the speech model failed. Argument: error description",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sprachmodell konnte nicht geladen werden: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The speech model could not be loaded: %@"
+          }
+        }
+      }
+    },
+    "modelNotReady" : {
+      "comment" : "Error: recognition was requested before the model finished loading",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Das Sprachmodell ist noch nicht bereit."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The speech model is not ready yet."
+          }
+        }
+      }
+    },
+    "unexpectedModelOutput" : {
+      "comment" : "Error: the speech model returned something unexpected. Argument: output name",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unerwartete Modellausgabe: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unexpected model output: %@"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.1"
+}

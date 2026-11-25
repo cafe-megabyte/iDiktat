@@ -6,6 +6,12 @@ import WebKit
 /// the keyboard-process audio restrictions that break `AVAudioEngine` / `AudioQueue`.
 ///
 /// Emits 16 kHz mono Int16 PCM chunks through `onAudio`.
+///
+/// Offline guarantee: the page is an inline string and never loads anything. On top of that
+/// the web view is locked down three ways, so it cannot reach the network even by mistake:
+/// 1. a Content-Security-Policy that forbids every fetch, XHR, WebSocket, image, frame etc.,
+/// 2. a WebKit content rule list that blocks every subresource load,
+/// 3. a navigation delegate that cancels every navigation except the initial inline page.
 @MainActor
 final class WebAudioCapture: NSObject {
     static let sampleRate: Double = 16_000
@@ -20,11 +26,23 @@ final class WebAudioCapture: NSObject {
     private let webView: WKWebView
     private var heartbeat: Timer?
 
+    /// `.invalid` is reserved (RFC 2606) and can never resolve. The URL only gives the inline
+    /// page an https origin, which `getUserMedia` requires; it is never requested.
+    private static let baseURL = URL(string: "https://idiktat.invalid/")!
+
+    /// Blocks every subresource type. The inline main document is not a network load and stays allowed.
+    private static let blockEverything = """
+    [{"trigger":{"url-filter":".*","resource-type":["image","style-sheet","script","font","raw","svg-document","media","popup"]},
+      "action":{"type":"block"}}]
+    """
+
     override init() {
         let configuration = WKWebViewConfiguration()
         configuration.allowsInlineMediaPlayback = true
         configuration.mediaTypesRequiringUserActionForPlayback = []
         configuration.websiteDataStore = .nonPersistent()
+        configuration.preferences.javaScriptCanOpenWindowsAutomatically = false
+        configuration.defaultWebpagePreferences.preferredContentMode = .mobile
         webView = WKWebView(frame: CGRect(x: 0, y: 0, width: 1, height: 1), configuration: configuration)
         super.init()
         configuration.userContentController.add(WeakMessageHandler(self), name: "capture")
@@ -39,15 +57,22 @@ final class WebAudioCapture: NSObject {
     func attach(to view: UIView) {
         view.addSubview(webView)
         view.sendSubviewToBack(webView)
-        // https base URL gives the page a secure context, which getUserMedia requires.
-        webView.loadHTMLString(Self.page, baseURL: URL(string: "https://keyboard-dictation.invalid/"))
+        Task { [weak self] in
+            let list = try? await WKContentRuleListStore.default().compileContentRuleList(
+                forIdentifier: "idiktat-block-all", encodedContentRuleList: Self.blockEverything
+            )
+            guard let self else { return }
+            // If compiling ever failed, the CSP and the navigation delegate still block all loads.
+            if let list { self.webView.configuration.userContentController.add(list) }
+            self.loadPage()
+        }
     }
 
     func start() {
         guard isReady, !isCapturing else { return }
         isCapturing = true
         heartbeat = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
-            Task { @MainActor in self?.webView.evaluateJavaScript("captureHeartbeat()") }
+            Task { @MainActor in _ = try? await self?.webView.evaluateJavaScript("captureHeartbeat(); 0") }
         }
         webView.evaluateJavaScript("startCapture(); 0") { [weak self] _, error in
             if let error { Task { @MainActor in self?.finish(reason: "start failed: \(error.localizedDescription)") } }
@@ -65,6 +90,10 @@ final class WebAudioCapture: NSObject {
         webView.stopLoading()
         webView.configuration.userContentController.removeScriptMessageHandler(forName: "capture")
         webView.removeFromSuperview()
+    }
+
+    private func loadPage() {
+        webView.loadHTMLString(Self.page, baseURL: Self.baseURL)
     }
 
     private func finish(reason: String) {
@@ -94,7 +123,9 @@ final class WebAudioCapture: NSObject {
     }
 
     private static let page = """
-    <!doctype html><html><body><script>
+    <!doctype html><html><head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; connect-src 'none'; img-src 'none'; media-src 'none'; frame-src 'none'; worker-src 'none'; form-action 'none'; base-uri 'none'">
+    </head><body><script>
     const targetRate = \(Int(sampleRate));
     const post = message => window.webkit.messageHandlers.capture.postMessage(message);
     const encode = samples => {
@@ -185,10 +216,32 @@ extension WebAudioCapture: WKUIDelegate, WKNavigationDelegate {
         decisionHandler(type == .microphone ? .grant : .deny)
     }
 
+    /// Only the inline page itself may load. Links, redirects, form posts, new windows: all cancelled.
+    func webView(
+        _ webView: WKWebView,
+        decidePolicyFor navigationAction: WKNavigationAction,
+        decisionHandler: @escaping (WKNavigationActionPolicy) -> Void
+    ) {
+        let isInlinePage = navigationAction.navigationType == .other
+            && navigationAction.targetFrame?.isMainFrame == true
+            && navigationAction.request.url?.host == Self.baseURL.host
+        decisionHandler(isInlinePage ? .allow : .cancel)
+    }
+
+    /// Refuse every attempt to open a new window.
+    func webView(
+        _ webView: WKWebView,
+        createWebViewWith configuration: WKWebViewConfiguration,
+        for navigationAction: WKNavigationAction,
+        windowFeatures: WKWindowFeatures
+    ) -> WKWebView? {
+        nil
+    }
+
     func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
         isReady = false
         finish(reason: "web content process terminated")
-        webView.loadHTMLString(Self.page, baseURL: URL(string: "https://keyboard-dictation.invalid/"))
+        loadPage()
     }
 }
 

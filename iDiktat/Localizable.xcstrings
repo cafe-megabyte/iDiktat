@@ -1,0 +1,690 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "addKeyboardSteps" : {
+      "comment" : "Instructions. Use the names of the iOS Settings screens in this language",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einstellungen → Allgemein → Tastatur → Tastaturen → Tastatur hinzufügen → iDiktat. Danach iDiktat antippen und „Vollen Zugriff erlauben“ einschalten."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings → General → Keyboard → Keyboards → Add New Keyboard → iDiktat. Then tap iDiktat and turn on “Allow Full Access”."
+          }
+        }
+      }
+    },
+    "allowMicrophone" : {
+      "comment" : "Button: asks for microphone permission",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mikrofon erlauben"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Allow Microphone"
+          }
+        }
+      }
+    },
+    "allowMicrophoneFirst" : {
+      "comment" : "Session message",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bitte zuerst den Mikrofonzugriff erlauben."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Please allow microphone access first."
+          }
+        }
+      }
+    },
+    "appModeFooter" : {
+      "comment" : "Section footer in app mode",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die App nimmt auf und erkennt im Hintergrund. Die Tastatur öffnet iDiktat beim ersten Diktieren automatisch. Danach zurückwechseln und erneut auf „Diktieren“ tippen. Solange die Sitzung läuft, ist das Mikrofon offen (oranger Punkt). Verarbeitet wird nur, was du zwischen „Diktieren“ und „Stopp“ sagst. Alles andere wird sofort verworfen und nie gespeichert."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The app records and recognizes in the background. The keyboard opens iDiktat automatically the first time you dictate. Then switch back and tap “Dictate” again. While the session runs, the microphone is open (orange dot). Only what you say between “Dictate” and “Stop” is processed. Everything else is discarded immediately and never stored."
+          }
+        }
+      }
+    },
+    "checkNow" : {
+      "comment" : "Button: opens the keyboard so it can confirm Full Access",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jetzt prüfen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Check Now"
+          }
+        }
+      }
+    },
+    "checkingHint" : {
+      "comment" : "Shown after tapping Check Now",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nur die iDiktat-Tastatur selbst kann ihren Zugriff bestätigen. Erscheint unten eine andere Tastatur, mit der Weltkugel auf iDiktat wechseln. Die Prüfung läuft dann automatisch. Beim nächsten Mal öffnet sich iDiktat hier direkt."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Only the iDiktat keyboard itself can confirm its access. If a different keyboard appears below, switch to iDiktat with the globe key. The check then runs automatically. Next time, iDiktat opens here directly."
+          }
+        }
+      }
+    },
+    "endSession" : {
+      "comment" : "Button",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sitzung beenden"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "End Session"
+          }
+        }
+      }
+    },
+    "fullAccessLabel" : {
+      "comment" : "Label of the Full Access state",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voller Zugriff"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Full Access"
+          }
+        }
+      }
+    },
+    "fullAccessSteps" : {
+      "comment" : "Instructions. Use the names of the iOS Settings screens in this language",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einstellungen → Allgemein → Tastatur → Tastaturen → iDiktat → „Vollen Zugriff erlauben“ einschalten. Danach hier auf „Jetzt prüfen“ tippen."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings → General → Keyboard → Keyboards → iDiktat → turn on “Allow Full Access”. Then tap “Check Now” here."
+          }
+        }
+      }
+    },
+    "fullAccessUnconfirmed" : {
+      "comment" : "Full Access state",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Noch nicht bestätigt"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Not confirmed yet"
+          }
+        }
+      }
+    },
+    "keyboardFooter" : {
+      "comment" : "Section footer",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voller Zugriff ist nötig, damit die Tastatur das Mikrofon und die Verbindung zur App benutzen darf. iDiktat enthält keinen Netzwerk-Code: Sprache und Text bleiben auf dem iPhone."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Full Access is required so the keyboard may use the microphone and the connection to the app. iDiktat contains no networking code: speech and text stay on your iPhone."
+          }
+        }
+      }
+    },
+    "keyboardLabel" : {
+      "comment" : "Label of the keyboard setup state",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tastatur"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keyboard"
+          }
+        }
+      }
+    },
+    "keyboardModeFooter" : {
+      "comment" : "Section footer in keyboard mode",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Tastatur nimmt auf und erkennt selbst. Ohne App-Wechsel. Falls die Tastatur beim Diktieren plötzlich verschwindet, auf „In der App“ umschalten."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The keyboard records and recognizes by itself, without switching apps. If the keyboard suddenly disappears while dictating, switch to “In the App”."
+          }
+        }
+      }
+    },
+    "keyboardNotAdded" : {
+      "comment" : "Keyboard setup state",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Noch nicht hinzugefügt"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Not added yet"
+          }
+        }
+      }
+    },
+    "keyboardReady" : {
+      "comment" : "Setup state: keyboard added and Full Access confirmed",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eingerichtet, voller Zugriff erlaubt"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Set up, Full Access allowed"
+          }
+        }
+      }
+    },
+    "keyboardSection" : {
+      "comment" : "Section header",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2. Tastatur aktivieren"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2. Enable Keyboard"
+          }
+        }
+      }
+    },
+    "microphoneAccess" : {
+      "comment" : "Label of the microphone permission state",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zugriff"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Access"
+          }
+        }
+      }
+    },
+    "microphoneDenied" : {
+      "comment" : "Microphone permission state",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abgelehnt (in den Einstellungen ändern)"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denied (change in Settings)"
+          }
+        }
+      }
+    },
+    "microphoneGranted" : {
+      "comment" : "Microphone permission state",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erlaubt"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Allowed"
+          }
+        }
+      }
+    },
+    "microphoneSection" : {
+      "comment" : "Section header",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1. Mikrofon"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1. Microphone"
+          }
+        }
+      }
+    },
+    "microphoneStartFailed" : {
+      "comment" : "Session message. Argument: error description",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mikrofon konnte nicht starten: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The microphone could not start: %@"
+          }
+        }
+      }
+    },
+    "microphoneUndetermined" : {
+      "comment" : "Microphone permission state",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Noch nicht gefragt"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Not asked yet"
+          }
+        }
+      }
+    },
+    "modeApp" : {
+      "comment" : "Mode picker option",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In der App"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In the App"
+          }
+        }
+      }
+    },
+    "modeKeyboard" : {
+      "comment" : "Mode picker option",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In der Tastatur"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In the Keyboard"
+          }
+        }
+      }
+    },
+    "openSettings" : {
+      "comment" : "Button: opens the Settings app",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einstellungen öffnen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Settings"
+          }
+        }
+      }
+    },
+    "recognitionPicker" : {
+      "comment" : "Label of the mode picker",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erkennung läuft"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recognition runs"
+          }
+        }
+      }
+    },
+    "recognitionSection" : {
+      "comment" : "Section header",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3. Erkennung"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3. Recognition"
+          }
+        }
+      }
+    },
+    "sessionEnded" : {
+      "comment" : "Session message",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sitzung beendet."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Session ended."
+          }
+        }
+      }
+    },
+    "sessionInterrupted" : {
+      "comment" : "Session message",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Sitzung wurde unterbrochen (z. B. durch einen Anruf). Bitte neu starten."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The session was interrupted (e.g. by a call). Please start it again."
+          }
+        }
+      }
+    },
+    "sessionLabel" : {
+      "comment" : "Label of the app mode session state",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sitzung"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Session"
+          }
+        }
+      }
+    },
+    "sessionRunning" : {
+      "comment" : "Session state",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Läuft"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Running"
+          }
+        }
+      }
+    },
+    "sessionStarted" : {
+      "comment" : "Session message. Back refers to the iOS back-to-app button in the status bar",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sitzung läuft. Du kannst jetzt zurück in deine App wechseln (oben links „‹ Zurück“)."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Session running. You can now switch back to your app (“‹ Back” at the top left)."
+          }
+        }
+      }
+    },
+    "sessionStopped" : {
+      "comment" : "Session state",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beendet"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ended"
+          }
+        }
+      }
+    },
+    "startSession" : {
+      "comment" : "Button",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sitzung starten"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start Session"
+          }
+        }
+      }
+    },
+    "testFieldPlaceholder" : {
+      "comment" : "Placeholder of the test field",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hier mit der Weltkugel auf iDiktat wechseln"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Switch to iDiktat here with the globe key"
+          }
+        }
+      }
+    },
+    "tryItHint" : {
+      "comment" : "Hint below the test field. Dictate and Stop are the keyboard's button titles",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auf „Diktieren“ tippen, sprechen (Deutsch, Englisch oder gemischt), dann „Stopp“."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap “Dictate”, speak (German, English or mixed), then tap “Stop”."
+          }
+        }
+      }
+    },
+    "tryItSection" : {
+      "comment" : "Section header",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "4. Ausprobieren"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "4. Try It"
+          }
+        }
+      }
+    },
+    "unsupportedAudioFormat" : {
+      "comment" : "Error",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Das Audioformat des Mikrofons wird nicht unterstützt."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The microphone's audio format is not supported."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.1"
+}

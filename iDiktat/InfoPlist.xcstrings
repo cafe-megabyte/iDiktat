@@ -1,0 +1,24 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "NSMicrophoneUsageDescription" : {
+      "comment" : "Microphone permission prompt",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iDiktat nimmt deine Stimme auf und wandelt sie direkt auf dem iPhone in Text um. Es wird nichts übertragen."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iDiktat records your voice and turns it into text right on your iPhone. Nothing is transmitted."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.1"
+}

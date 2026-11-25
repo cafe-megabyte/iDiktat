@@ -1,0 +1,6 @@
+// Copy this file to Signing.xcconfig (same folder) and enter your Apple Developer team ID.
+// Signing.xcconfig is ignored by Git, so your team ID stays on your Mac.
+// Find the ID at developer.apple.com → Account → Membership details, or in Xcode under
+// Settings → Accounts.
+
+DEVELOPMENT_TEAM =

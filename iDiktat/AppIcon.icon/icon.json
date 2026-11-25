@@ -1,0 +1,49 @@
+{
+  "fill-specializations" : [
+    {
+      "value" : {
+        "solid" : "srgb:0.80661,0.85449,0.93529,1.00000"
+      }
+    },
+    {
+      "appearance" : "dark",
+      "value" : {
+        "solid" : "srgb:0.08680,0.15518,0.24295,1.00000"
+      }
+    }
+  ],
+  "groups" : [
+    {
+      "name" : "Microphone",
+      "layers" : [
+        {
+          "name" : "Microphone",
+          "image-name-specializations" : [
+            {
+              "value" : "Light.png"
+            },
+            {
+              "appearance" : "dark",
+              "value" : "Dark.png"
+            }
+          ],
+          "glass" : false
+        }
+      ],
+      "shadow" : {
+        "kind" : "none",
+        "opacity" : 0.0
+      },
+      "specular" : false,
+      "translucency" : {
+        "enabled" : false,
+        "value" : 0.0
+      }
+    }
+  ],
+  "supported-platforms" : {
+    "squares" : [
+      "iOS"
+    ]
+  }
+}
