@@ -284,7 +284,33 @@ final class TypingKeyboardView: UIView {
     private var proxy: UITextDocumentProxy? { controller?.textDocumentProxy }
     private var lastSpace = Date.distantPast
 
-    private func click() { UIDevice.current.playInputClick() }
+    /// The keyboard's feedback when a key goes down: the click sound (if switched on in Settings)
+    /// and a light haptic tap, like the system keyboard with "Keyboard Feedback → Haptic".
+    /// Third-party keyboards cannot read that setting, so the haptic always plays. Haptics in a
+    /// keyboard need Full Access, which iDiktat requires anyway.
+    private func click(_ key: KeyView) {
+        UIDevice.current.playInputClick()
+        haptic(keyHaptic, at: key)
+    }
+
+    private lazy var keyHaptic = UIImpactFeedbackGenerator(style: .light, view: self)
+    /// A slightly stronger tap when a long press opens the accents or the cursor trackpad.
+    private lazy var longPressHaptic = UIImpactFeedbackGenerator(style: .medium, view: self)
+
+    /// Both taps play a little below their style's full strength, which felt slightly too strong
+    /// on the iPhone. 1.0 is full strength.
+    private let hapticIntensity: CGFloat = 0.8
+
+    private func haptic(_ generator: UIImpactFeedbackGenerator, at key: KeyView) {
+        generator.impactOccurred(intensity: hapticIntensity, at: key.center)
+        // Keeps the Taptic Engine ready for the next key, so the tap comes without delay.
+        generator.prepare()
+    }
+
+    override func didMoveToWindow() {
+        super.didMoveToWindow()
+        if window != nil { keyHaptic.prepare() }
+    }
 
     private func type(_ text: String) {
         proxy?.insertText(text)
@@ -377,7 +403,7 @@ final class TypingKeyboardView: UIView {
 
     private func began(_ state: Tracked) {
         let key = state.key
-        click()
+        click(key)
         switch key.kind {
         case .character(let c):
             showPreview(for: key)
@@ -389,6 +415,7 @@ final class TypingKeyboardView: UIView {
                         guard let self, let state, !state.consumed else { return }
                         let shown = self.showsUppercase ? variants.map { $0.uppercased() } : variants
                         state.mode = .accents(shown)
+                        self.haptic(self.longPressHaptic, at: state.key)
                         self.popup.showAccents(shown, above: state.key.frame, in: self.bounds, font: self.metrics.letterFont)
                     }
                 }
@@ -416,6 +443,7 @@ final class TypingKeyboardView: UIView {
                 MainActor.assumeIsolated {
                     guard let self, let state, !state.consumed else { return }
                     state.mode = .trackpad
+                    self.haptic(self.longPressHaptic, at: state.key)
                     self.keys.forEach { $0.dimmed = true }
                 }
             }
@@ -433,7 +461,7 @@ final class TypingKeyboardView: UIView {
                 // After about a second of holding, delete whole words, more slowly.
                 let words = self.deleteRepeats > 10
                 if words && self.deleteRepeats % 3 != 0 { return }
-                self.click()
+                self.click(state.key)
                 self.deleteBackward(word: words)
             }
         }

@@ -77,8 +77,10 @@ Above the dictation button sits a full keyboard in the style of the iOS keyboard
 umlauts and German labels if the iPhone is set to German, QWERTY otherwise. It includes numbers and symbols (123,
 #+=), shift with caps lock (double tap), automatic capitalization at the start of a sentence,
 ". " by double space, and accents by long press (e.g. s → ß). A long press on the space bar moves
-the cursor; holding delete removes characters first, then whole words. There are no word
-suggestions and no autocorrection.
+the cursor; holding delete removes characters first, then whole words. Every key gives a light
+haptic tap, and opening the accents or the cursor trackpad a slightly stronger one. Third-party
+keyboards cannot read the iOS setting *Keyboard Feedback → Haptic*, so it is always on. There
+are no word suggestions and no autocorrection.
 
 ## Two recognition modes
 
