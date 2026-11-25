@@ -4,8 +4,11 @@
 #
 # Run by the build phase "Unpack Speech Model" of the target iDiktatKeyboard. Thanks to its input
 # and output paths, Xcode runs it only when the ZIP (or this script) changed or the unpacked model
-# is missing from the build folder. The build sandbox (ENABLE_USER_SCRIPT_SANDBOXING) only allows
-# writing the declared output, so the script unpacks directly into it, without a temporary folder.
+# is missing from the build folder.
+#
+# The target iDiktatKeyboard turns off the script sandbox (ENABLE_USER_SCRIPT_SANDBOXING = NO): the
+# sandbox may create a declared output folder but not read or delete what is inside, so replacing
+# an existing model would fail. This script only touches the Parakeet folder in the build folder.
 
 set -eu
 

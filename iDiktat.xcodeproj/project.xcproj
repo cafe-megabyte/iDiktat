@@ -114,7 +114,7 @@
           ],
           "shell": "/bin/sh",
           "script": [
-            "\"$SRCROOT/Scripts/unpack-model.sh\" \"$SRCROOT/Models/Parakeet.zip\" \"$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/Parakeet\"",
+            "/bin/sh \"$SRCROOT/Scripts/unpack-model.sh\" \"$SRCROOT/Models/Parakeet.zip\" \"$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/Parakeet\"",
             "",
           ],
         },
@@ -122,6 +122,7 @@
       "build-settings": {
         "APPLICATION_EXTENSION_API_ONLY": "YES",
         "CODE_SIGN_ENTITLEMENTS": "Config/iDiktatKeyboard.entitlements",
+        "ENABLE_USER_SCRIPT_SANDBOXING": "NO",
         "GENERATE_INFOPLIST_FILE": "NO",
         "INFOPLIST_FILE": "Config/Keyboard-Info.plist",
         "INFOPLIST_PREFIX_HEADER": "$(PROJECT_TEMP_DIR)/BuildNumber.c",
