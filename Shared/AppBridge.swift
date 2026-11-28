@@ -25,6 +25,14 @@ enum AppBridge {
         set { defaults?.set(newValue.rawValue, forKey: "mode") }
     }
 
+    /// Whether the keyboard gives haptic feedback on key press. Defaults to on, matching the
+    /// keyboard's previous always-on behavior; `object(forKey:)` (not `bool(forKey:)`) tells a
+    /// never-set value apart from an explicit `false`.
+    static var hapticEnabled: Bool {
+        get { (defaults?.object(forKey: "hapticEnabled") as? Bool) ?? true }
+        set { defaults?.set(newValue, forKey: "hapticEnabled") }
+    }
+
     // MARK: Keyboard → app
 
     struct Command: Codable {
