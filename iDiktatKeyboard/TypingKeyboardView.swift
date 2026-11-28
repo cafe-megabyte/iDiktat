@@ -286,8 +286,9 @@ final class TypingKeyboardView: UIView {
 
     /// The keyboard's feedback when a key goes down: the click sound (if switched on in Settings)
     /// and a light haptic tap, like the system keyboard with "Keyboard Feedback → Haptic".
-    /// Third-party keyboards cannot read that setting, so the haptic always plays. Haptics in a
-    /// keyboard need Full Access, which iDiktat requires anyway.
+    /// Third-party keyboards cannot read that iOS setting, so iDiktat has its own
+    /// `AppBridge.hapticEnabled` toggle instead (see `haptic(_:at:)`). Haptics in a keyboard need
+    /// Full Access, which iDiktat requires anyway.
     private func click(_ key: KeyView) {
         UIDevice.current.playInputClick()
         haptic(keyHaptic, at: key)
@@ -302,6 +303,7 @@ final class TypingKeyboardView: UIView {
     private let hapticIntensity: CGFloat = 0.8
 
     private func haptic(_ generator: UIImpactFeedbackGenerator, at key: KeyView) {
+        guard AppBridge.hapticEnabled else { return }
         generator.impactOccurred(intensity: hapticIntensity, at: key.center)
         // Keeps the Taptic Engine ready for the next key, so the tap comes without delay.
         generator.prepare()

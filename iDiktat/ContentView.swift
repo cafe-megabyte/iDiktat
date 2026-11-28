@@ -38,6 +38,10 @@ struct ContentView: View {
                     } header: {
                         Text(.tryItSection)
                     }
+
+                    // Settings sections (not part of the numbered 1–4 setup flow above) live
+                    // after it, so new ones never interrupt that sequence.
+                    hapticFeedbackSection
                 }
                 .navigationTitle(Text(verbatim: "iDiktat"))
                 #if DEBUG
@@ -108,6 +112,20 @@ struct ContentView: View {
         } footer: {
             Text(.keyboardFooter)
         }
+    }
+
+    private var hapticFeedbackSection: some View {
+        Section {
+            Toggle(.hapticFeedbackToggle, isOn: hapticEnabledBinding)
+        } header: {
+            Text(.hapticFeedbackSection)
+        }
+    }
+
+    /// Reads and writes `AppBridge.hapticEnabled` directly, so the key name and default live in
+    /// exactly one place (`AppBridge`) instead of being duplicated here.
+    private var hapticEnabledBinding: Binding<Bool> {
+        Binding(get: { AppBridge.hapticEnabled }, set: { AppBridge.hapticEnabled = $0 })
     }
 
     private var recognitionSection: some View {

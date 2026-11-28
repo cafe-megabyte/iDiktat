@@ -181,6 +181,42 @@
         }
       }
     },
+    "hapticFeedbackSection" : {
+      "comment" : "Section header",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tastatur-Feedback"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keyboard Feedback"
+          }
+        }
+      }
+    },
+    "hapticFeedbackToggle" : {
+      "comment" : "Toggle label",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haptisches Feedback"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haptic Feedback"
+          }
+        }
+      }
+    },
     "keyboardFooter" : {
       "comment" : "Section footer",
       "extractionState" : "manual",
